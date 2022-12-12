@@ -6,7 +6,7 @@ import { ServersInterfaces } from '../interfaces/servers.interfaces';
 })
 
 export class ServersServicesService {
-  private _servers=[
+  private _servers:ServersInterfaces[]=[
     {
       id: 1,
       name: 'Productionserver',
