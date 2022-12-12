@@ -3,6 +3,7 @@
         <!-- Por cada servidor crearemos una tarjeta con el nombre y
         el
         estado del servidor-->
+        <button class="btn btn-info" (click)="onReload()">Reload Servers</button>
         <div class="card mt-2" *ngFor="let server of servers">
             <div class="card-header">{{server.name}}</div>
             <div class="card-body">
