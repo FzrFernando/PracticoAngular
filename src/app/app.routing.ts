@@ -4,7 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { ComponentesusersComponent } from './users/componentesusers/componentesusers.component';
 import { ServersComponent } from './servers/servers-component/servers.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
-import { EditServerComponent } from './edit-server/edit-server.component';
+import { EditServerComponent } from './servers/edit-server/edit-server.component';
 
 const routes: Routes = [
     {
@@ -21,8 +21,8 @@ const routes: Routes = [
       component: ComponentesusersComponent
     },
     {
-        path: 'servers',
-        component: ServersComponent
+      path: 'servers',
+      component: ServersComponent
     },
     {
       path: 'servers/:id/edit',

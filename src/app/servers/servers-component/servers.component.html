@@ -4,12 +4,14 @@
         el
         estado del servidor-->
         <button class="btn btn-info" (click)="onReload()">Reload Servers</button>
-        <div class="card mt-2" *ngFor="let server of servers">
+        <a class="card mt-2" href="#" *ngFor="let server of servers"
+        [routerLink]="['/servers', 3, 'edit']" [queryParams]="{allowEdit: '1'}"
+        fragment="loading">
             <div class="card-header">{{server.name}}</div>
             <div class="card-body">
                 <h5 class="card-title">Server status</h5>
                 <p class="card-text">{{server.status}}</p>
             </div>
-        </div>
+        </a>
     </div>
 </div>
