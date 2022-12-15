@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ServersServicesService } from 'src/app/services/servers.services.service';
 import { ServersInterfaces } from '../../interfaces/servers.interfaces';
 
@@ -15,11 +15,22 @@ export class ServersComponent {
 
   }
 
+  // ngOnInit() {
+  //   const id = this.route.snapshot.params['id'];
+  //   this.server = this.bsServer.getServer(id);
+  //   this.route.params.subscribe((params: Params) => {
+  //   this.server = this.bsServer.getServer(params = id);
+  // });
+
   get servers():ServersInterfaces[]{
     return this.bsServer.servers;
   }
 
   onReload(){
     //this.router.navigate(['servers'], {relativeTo: this.route});
+  }
+
+  onEdit() {
+    this.router.navigate(['edit'], {relativeTo: this.route})
   }
 }

@@ -7,15 +7,13 @@ import { HomeComponent } from './home/home.component';
 import { UsersServicesService } from './services/users.services.service';
 import { SharedModule } from './shared/shared.module';
 import { UsersModule } from './users/users.module';
-import { UserComponent } from './user/user.component';
 import { ServersModule } from './servers/servers.module';
 import { ServersServicesService } from './services/servers.services.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    UserComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,

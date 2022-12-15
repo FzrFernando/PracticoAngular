@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ComponentesusersComponent } from './componentesusers/componentesusers.component';
 import { UsersServicesService } from '../services/users.services.service';
+import { RouterLink } from '@angular/router';
 
 
 
@@ -10,7 +11,8 @@ import { UsersServicesService } from '../services/users.services.service';
     ComponentesusersComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterLink
   ],
   exports: [
     ComponentesusersComponent

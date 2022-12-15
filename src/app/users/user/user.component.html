@@ -1,0 +1,8 @@
+<p>User with ID {{user.id}} loaded.</p>
+<p>User name is {{user.name}}</p>
+<hr>
+<a href="#" class="list-group-item list-group-item-action" *ngFor="let user of users"
+[routerLink]="['/users', user.id, user.name]">Users</a>
+<div class="col-sm-4">
+    <router-outlet></router-outlet>
+</div>

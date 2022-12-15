@@ -3,15 +3,18 @@
         <!-- Por cada servidor crearemos una tarjeta con el nombre y
         el
         estado del servidor-->
-        <button class="btn btn-info" (click)="onReload()">Reload Servers</button>
-        <a class="card mt-2" href="#" *ngFor="let server of servers"
-        [routerLink]="['/servers', 3, 'edit']" [queryParams]="{allowEdit: '1'}"
-        fragment="loading">
+        <!-- <button class="btn btn-info" (click)="onReload()">Reload Servers</button> -->
+        <button class="btn btn-primary" (click)="onEdit()">Edit server</button>
+        <a href="#" class="card mt-2" *ngFor="let server of servers"
+        [routerLink]="['/servers', server.id]" [queryParams]="{allowEdit: server.id === 3 ? '1' : '0'}" fragment="loading">
             <div class="card-header">{{server.name}}</div>
             <div class="card-body">
                 <h5 class="card-title">Server status</h5>
                 <p class="card-text">{{server.status}}</p>
             </div>
         </a>
+        <div class="col-sm-4">
+            <router-outlet></router-outlet>
+        </div>
     </div>
 </div>

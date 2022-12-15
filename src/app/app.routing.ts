@@ -12,21 +12,14 @@ const routes: Routes = [
         component: HomeComponent,
         pathMatch: 'full'
     },
-    {
-        path: 'users',
-        component: ComponentesusersComponent
+    { path: 'users', component: ComponentesusersComponent, children: [
+      { path: ':id/:name', component: ComponentesusersComponent },
+      ]
     },
-    {
-      path: 'users/:id/:name',
-      component: ComponentesusersComponent
-    },
-    {
-      path: 'servers',
-      component: ServersComponent
-    },
-    {
-      path: 'servers/:id/edit',
-      component: EditServerComponent
+    { path: 'servers', component: ServersComponent, children: [
+      { path: ':id/edit', component: EditServerComponent },
+      { path: ':id', component: ServersComponent }
+    ] 
     },
     {
         path: '**',

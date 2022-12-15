@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { ServersServicesService } from 'src/app/services/servers.services.service';
 
 @Component({
@@ -7,10 +7,14 @@ import { ServersServicesService } from 'src/app/services/servers.services.servic
   templateUrl: './edit-server.component.html'
 })
 export class EditServerComponent {
+  allowEdit = false;
   constructor(private serversService: ServersServicesService,
-    private route: ActivatedRoute) { }
+              private route: ActivatedRoute) { }
   ngOnInit() {
-    console.log(this.route.snapshot.queryParams);
-    console.log(this.route.snapshot.fragment);
+    this.route.queryParams.subscribe(
+      (queryParams: Params) => {
+        this.allowEdit = queryParams['allowEdit'] === '1';
+      }
+    )
   }
 }
